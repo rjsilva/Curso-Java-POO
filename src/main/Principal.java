@@ -2,7 +2,12 @@ package main;
 
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 import Dao.PessoaDao;
+import comando.ComandoFor;
+import comando.ComandoJOptionPane;
+import comando.ComandoWhile;
 import modelo.Pessoa;
 
 public class Principal {
@@ -34,6 +39,20 @@ public class Principal {
 			p.setNome(in.next());
 			PessoaDao pdao = new PessoaDao();
 			pdao.addPessoa(p);
+			break;
+		case 2 :
+			ComandoWhile cw = new ComandoWhile();
+			cw.menu();
+			break;
+			
+		case 3 :
+			ComandoFor cf = new ComandoFor();
+			cf.EscreveNumero();
+			break;
+		case 4 :
+			ComandoJOptionPane cjop = new ComandoJOptionPane();
+			String nome = JOptionPane.showInputDialog("digite seu nome");
+			cjop.MostraNome(nome);
 			break;
 
 		default:
